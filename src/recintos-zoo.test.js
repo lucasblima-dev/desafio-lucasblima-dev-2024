@@ -34,7 +34,7 @@ describe('Recintos do Zoologico', () => {
         expect(resultado.recintosViaveis[0]).toBe('Recinto 1 (espaço livre: 5 total: 10)');
         expect(resultado.recintosViaveis[1]).toBe('Recinto 2 (espaço livre: 3 total: 5)');
         expect(resultado.recintosViaveis[2]).toBe('Recinto 3 (espaço livre: 3 total: 7)');
-        //Alterando o Recinto 3 p/ três espaços livres, pois seria uma gazela (2) + 2 macacos (cada) == 4 preenchidos e 3 livres
+        //Alterando o Recinto 3 p/ três espaços livres, pois seria uma gazela (2) + 2 macacos (1 cada) == 4 preenchidos e 3 livres
         expect(resultado.recintosViaveis.length).toBe(3);
     });
 });

@@ -1,15 +1,5 @@
 # RECINTOS DO ZOO
-
-## COMO BAIXAR O CÓDIGO E SUBMETER MINHA SOLUÇÃO?
-Para completar a etapa do desafio você terá que baixar a estrutura do código aqui na Azure, resolver o desafio usando Javascript e entregá-lo no repositório no seu github.
-
-### BAIXANDO A ESTRUTURA
-Para baixar a estrutura no formato zip, basta clicar neste [link](https://dev.azure.com/db-tecnologia/99dbf7ce-dadd-40d3-b827-e1648cb6a262/_apis/git/repositories/877e7dfb-78ea-465e-bd88-9dbf83120933/items?path=/&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=main&resolveLfs=true&%24format=zip&api-version=5.0&download=true).
-
-### ENTREGANDO O DESAFIO
-Após resolver o desafio e validá-lo com os testes (mais detalhes nos tópicos abaixo), você terá que criar um repositório **público** no [Github](https://github.com/) com o **nome** de `desafio-seuUsername-2024` (substitua "seuUsername" pelo seu usuário do GitHub) e colocar o código na **branch** `main`.
-
-Se você ainda não teve contato com essa ferramenta, não tem problema. Separamos um material para lhe ajudar nessa etapa: [Como usar Git e Github na prática](https://www.youtube.com/watch?v=UBAX-13g8OM).
+O projeto consiste em um teste da empresa **START DB** para a vaga de estágio. Abaixo está o que foi solicitado e algumas informações para entender o que foi feito e como foi feito.
 
 ## O DESAFIO
 Olá! Você foi contratado para ajudar na organização de um zoológico.
@@ -56,80 +46,17 @@ Por exemplo, se chegar um lote de 12 macacos, não é possível colocar 6 em 2 r
 
 1) O programa deve receber tipo e quantidade de animal (nessa ordem)
 2) O programa deve retornar uma estrutura contendo a lista de todos os recintos viáveis ordenada pelo número do recinto (caso existam) e a mensagem de erro (caso exista)
-3) A lista de recintos viáveis deve indicar o espaço livre que restaria após a inclusão do(s) animal(is) e o espaço total, no formato "Recinto nro (espaço livre: valorlivre total: valortotal)"
+3) A lista de recintos viáveis deve indicar o espaço livre que restaria após a inclusão do(s) animal(is) e o espaço total, no formato "Recinto nro (espaço livre: *valorlivre* total: *valortotal*)"
 4) Caso animal informado seja inválido, apresentar erro "Animal inválido"
 5) Caso quantidade informada seja inválida, apresentar erro "Quantidade inválida"
 6) Caso não haja recinto possível, apresentar erro "Não há recinto viável"
 
-### EXEMPLOS
+### CONSTRUÇÃO DO PROJETO (CÓDIGOS E TESTES)
+O projeto manteve a classe principal *'recintos-zoo.js'*, respeitando a classe criada e o método *'analisaRecintos()'*. Com isso, foi criado um novo arquivo contendo uma nova classe com a lógica adicional. Ela possui dois métodos responsáveis por calcular o espaço livre de um recinto e verificar a compatibilidade do animal inserido com os já existentes.
 
-Entrada para um caso válido
-```js
-"MACACO", 2
-```
-Saída
-```js
-{
-  recintosViaveis: ["Recinto 1 (espaço livre: 5 total: 10)", 
-   "Recinto 2 (espaço livre: 3 total: 5)", 
-   "Recinto 3 (espaço livre: 2 total: 7)"]
-}
-```
+Com relação aos testes, o que já veio com o projeto foi feito uma pequena alteação pois o código quebrava no teste mesmo que não devesse quebrar (está explicado no próprio arquivo). Já os testes criado por mim, serviu para checar informações a respeito da compatibilidade dos animais inseridos e o resultado esperado.
 
-Entrada para um caso inválido
-```js
-"UNICORNIO", 1
-```
-Saída
-```js
-{
-  erro: "Animal inválido"
-}
-```
+### CONSIDERAÇÕES FINAIS
+Tudo que foi feito, foi muito gratificante, pois precisei rever alguns conceitos nas minhas anotações, além de precisar quebrar a cabeça com a lógica a respeito de animais confortáveis em mais de um recinto. 
 
-### O CÓDIGO
-Você está recebendo uma estrutura básica para desenvolver a lógica do desafio. O arquivo principal está localizado dentro da pasta `src` e se chama `recintos-zoo.js`. Você pode desenvolver a sua lógica criando outros arquivos, métodos e até mesmo outras classes, porém o resultado deve poder ser obtido através do método `analisaRecintos`.
-
-> **ALERTA**:
-> É importante que essa estrutura básica não seja alterada, pois as etapas automáticas da nossa validação dependem disso. Conseguir executar os passos descritos mais adiante na seção `VALIDANDO A SOLUÇÃO` também ajudará você a verificar que seu código segue a estrutura definida.
-
-Exemplo de chamada
-```js
-  new RecintosZoo().analisaRecintos('MACACO', 2);
-```
-
-### INSTALANDO E RODANDO NA SUA MÁQUINA
-1. Instalar o [Node](https://nodejs.org/en/)
-2. Instalar dependencias do projeto com o seguinte comando:
-```bash
-npm install
-```
-
-### VALIDANDO A SOLUÇÃO
-Junto com a estrutura básica você está recebendo alguns cenários de testes no arquivo `recintos-zoo.test.js` para auxiliar na validação da sua solução. Recomendamos que você crie mais casos de teste para aumentar a confiabilidade da sua solução.
-Para testar sua solução com os cenários existentes ou novos, rode o seguinte comando:
-```bash
-npm test
-```
-
-Para saber mais consulte a [Documentação do Jest](https://jestjs.io/pt-BR/docs/getting-started).
-
-### VALIDANDO A ENTREGA
-Para garantir que seu desafio vai ser considerado entregue, revise os seguintes pontos:
-
-#### GIT
-O repositório deve ser **público** e ter o **nome** e **branch** indicados na seção `ENTREGANDO O DESAFIO`.
-
-Para verificar que o repositório é público, deslogue-se do github e tente ver o código. Se conseguir, nós também conseguimos! Lembrando que vamos usar o link para o usuário informado durante o cadastro na Gupy. Veja [como alterar a visibilidade](https://docs.github.com/pt/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility#changing-a-repositorys-visibility).
-
-#### CÓDIGO
-A solução deve ser entregue em **javascript** e a **estrutura de pastas e arquivos** deve seguir o indicado na seção `O CÓDIGO`.
-
-O **export** da classe deve ser mantido da seguinte maneira para compatibilidade com o arquivo de testes:
-```js
-export { RecintosZoo as RecintosZoo };
-```
-
-Se todos os passos forem seguidos corretamente, você terá um repositório como o da figura abaixo (lembrando que é permitido criar mais arquivos), onde `seuUsername` é o seu usuário do GitHub, que você informou no questionário da Gupy.
-
-![Exemplo de repositório](https://startdbstorage.blob.core.windows.net/filecontainer/imagem-estrutura.png)
+Agradeço imensamente pela oportunidade e espero conseguir prosseguir!
