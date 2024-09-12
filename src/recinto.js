@@ -19,9 +19,15 @@ export default class Recinto {
   }
 
   verificarCompatibilidade(especie, quantidade) {
-    if (this.animaisExistentes.some(a => this.animaisInfo[a.especie].carnivoro === true)) return false;
+    if (especie.nome === 'CROCODILO') {
+      return this.bioma === 'rio' && this.calcularEspacoLivre() >= (especie.tamanho * quantidade);
+    } else {
+      if (!especie.bioma.some(bioma => this.bioma.includes(bioma))) return false;
+    }
 
-    if (this.animaisExistentes.some(a => this.animaisInfo[a.especie].carnivoro && a.especie !== especie.nome)) return false;
+    if (especie.carnivoro) return this.animaisExistentes.some(a => this.animaisInfo[a.especie].carnivoro === true);
+
+    if (this.animaisExistentes.some(animal => this.animaisInfo[animal.especie].carnivoro && animal.especie !== especie.nome)) return false;
 
     if (!especie.bioma.some(bioma => this.bioma.includes(bioma))) return false;
 
