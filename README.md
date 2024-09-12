@@ -52,11 +52,11 @@ Por exemplo, se chegar um lote de 12 macacos, não é possível colocar 6 em 2 r
 6) Caso não haja recinto possível, apresentar erro "Não há recinto viável"
 
 ### CONSTRUÇÃO DO PROJETO (CÓDIGOS E TESTES)
-O projeto manteve a classe principal *'recintos-zoo.js'*, respeitando a classe criada e o método *'analisaRecintos()'*. Com isso, foi criado um novo arquivo contendo uma nova classe com a lógica adicional. Ela possui dois métodos responsáveis por calcular o espaço livre de um recinto e verificar a compatibilidade do animal inserido com os já existentes.
+Mantive o arquivo principal *'recintos-zoo.js'*, respeitando a classe criada e o método *'analisaRecintos()'*. Com isso, foi criado um novo arquivo contendo uma nova classe com a lógica adicional. Ela possui dois métodos responsáveis por calcular o espaço livre de um recinto e verificar a compatibilidade do animal inserido com os já existentes.
 
 Com relação aos testes, o que já veio com o projeto foi feito uma pequena alteação pois o código quebrava no teste mesmo que não devesse quebrar (está explicado no próprio arquivo). Já os testes criado por mim, serviu para checar informações a respeito da compatibilidade dos animais inseridos e o resultado esperado.
 
 ### CONSIDERAÇÕES FINAIS
-Tudo que foi feito, foi muito gratificante, pois precisei rever alguns conceitos nas minhas anotações, além de precisar quebrar a cabeça com a lógica a respeito de animais confortáveis em mais de um recinto. 
+Tudo feito nesse projeto, foi muito gratificante, pois precisei rever alguns conceitos nas minhas anotações. Além disso, precisei quebrar a cabeça com a lógica a respeito de animais confortáveis em mais de um recinto. 
 
 Agradeço imensamente pela oportunidade e espero conseguir prosseguir!
