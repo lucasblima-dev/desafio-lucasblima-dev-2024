@@ -41,6 +41,6 @@ class RecintosZoo {
 }
 
 const zooLote = new RecintosZoo();
-console.log(zooLote.analisaRecintos('MACACO', 2));
+console.log(zooLote.analisaRecintos('HIPOPOTAMO', 1));
 
 export { RecintosZoo as RecintosZoo }
